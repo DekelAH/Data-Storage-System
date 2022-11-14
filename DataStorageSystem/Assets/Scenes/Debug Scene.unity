@@ -300,7 +300,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 42001864}
   - {fileID: 1234508984}
@@ -327,6 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff9d1dd74754a4d89f134b569f6a791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinsText: {fileID: 1367260188}
+  _gemsText: {fileID: 1338110052}
   _coinsToAdd: 30
   _coinsToTake: 30
   _gemsToAdd: 1
@@ -343,6 +344,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 52243150}
@@ -356,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DefaultNamespace.GameScreen, Assembly-CSharp
+      value: VectorSchool.GameScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -474,6 +479,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 52243150}
@@ -487,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DefaultNamespace.GameScreen, Assembly-CSharp
+      value: VectorSchool.GameScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -672,7 +681,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -689,6 +697,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 52243150}
@@ -702,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DefaultNamespace.GameScreen, Assembly-CSharp
+      value: VectorSchool.GameScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -808,6 +820,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2543140778281140211, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
   m_PrefabInstance: {fileID: 1234508983}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338110052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 728889349257084852, guid: a6d4615630fa34846a4dbbeb3298706b, type: 3}
+  m_PrefabInstance: {fileID: 42001863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367260188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5264729938001000293, guid: a6d4615630fa34846a4dbbeb3298706b, type: 3}
+  m_PrefabInstance: {fileID: 42001863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1665793588
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +904,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -887,6 +920,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 52243150}
@@ -900,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DefaultNamespace.GameScreen, Assembly-CSharp
+      value: VectorSchool.GameScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2543140778281140108, guid: a6a79b69ddd04cd4fbb3989653351d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1096,7 +1133,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 52243149}
   m_Father: {fileID: 0}
