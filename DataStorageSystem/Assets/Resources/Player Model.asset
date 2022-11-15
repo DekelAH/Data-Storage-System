@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2457b7809721344bdb3b3ab037f4ab, type: 3}
   m_Name: Player Model
   m_EditorClassIdentifier: 
-  _coinsBalance: 1000
-  _gemsBalance: 7
+  _coinsBalance: 220
+  _gemsBalance: 112
   _useLocalData: 0

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.StorageSystem;
+using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Infastructure
 {
@@ -8,13 +10,16 @@ namespace Assets.Scripts.Infastructure
 
         private static PlayerDataManager _instance;
 
+        private readonly static LocalFileStorageSystem _localFileStorageSystem = new LocalFileStorageSystem();
+        private readonly static PlayerPrefsStorageSystem _playerPrefsStorageSystem = new PlayerPrefsStorageSystem();
+
         #endregion
 
         #region Methods
 
         public void LoadPlayerPrefsData()
         {
-            LoadPlayerModel();
+            LoadPlayerData();
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -31,7 +36,7 @@ namespace Assets.Scripts.Infastructure
             if (!PlayerModelProvider.Instance.Get.UseLocalData)
             {
                 SubsribeToEvents();
-                LoadPlayerModel();
+                LoadPlayerData();
             }
             else
             {
@@ -39,28 +44,46 @@ namespace Assets.Scripts.Infastructure
             }
         }
 
-        private static void OnCoinsBalanceChange(int coins)
+        private static void OnDataBalanceChange()
         {
-            PlayerPrefs.SetInt("Coins", coins);
-            PlayerPrefs.Save();
+            if (!PlayerModelProvider.Instance.Get.UseLocalData)
+            {
+                switch (PlayerModelProvider.Instance.Get.PlayerModelSaveTypeName)
+                {
+                    case "Local File":
+                        _localFileStorageSystem.Save();
+                        break;
+                    case "Player Prefs":
+                        _playerPrefsStorageSystem.Save();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                return;
+            }
         }
 
-        private static void OnGemsBalanceChange(int gems)
+        private static void LoadPlayerData()
         {
-            PlayerPrefs.SetInt("Gems", gems);
-            PlayerPrefs.Save();
-        }
-
-        private static void LoadPlayerModel()
-        {
-            PlayerModelProvider.Instance.Get.InitializeData(PlayerPrefs.GetInt("Coins"), PlayerPrefs.GetInt("Gems"));
-            Debug.Log("<-- Load Complete -->");
+            switch (PlayerModelProvider.Instance.Get.PlayerModelSaveTypeName)
+            { 
+                case "Local File":
+                    _localFileStorageSystem.Load();
+                    break;
+                case "Player Prefs":
+                    _playerPrefsStorageSystem.Load();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private static void SubsribeToEvents()
         {
-            PlayerModelProvider.Instance.Get.CoinsBalanceChange += OnCoinsBalanceChange;
-            PlayerModelProvider.Instance.Get.GemsBalanceChange += OnGemsBalanceChange;
+            PlayerModelProvider.Instance.Get.DataBalanceChange += OnDataBalanceChange;
         }
 
         #endregion
