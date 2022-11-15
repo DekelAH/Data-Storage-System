@@ -21,9 +21,21 @@ namespace Assets.Scripts.Data_Models
         [SerializeField]
         private int _gemsBalance;
 
+        [SerializeField]
+        private bool _useLocalData;
+
         #endregion
 
         #region Methods
+
+        public void InitializeData(int coins,int gems)
+        {
+            _coinsBalance = coins;
+            _gemsBalance = gems;
+
+            GemsBalanceChange?.Invoke(_gemsBalance);
+            CoinsBalanceChange?.Invoke(_coinsBalance);
+        }
 
         public void AddCoins(int coinsToAdd)
         {
@@ -55,6 +67,7 @@ namespace Assets.Scripts.Data_Models
 
         public int CoinsBalance => _coinsBalance;
         public int GemsBalance => _gemsBalance;
+        public bool UseLocalData => _useLocalData;
 
         #endregion
     }

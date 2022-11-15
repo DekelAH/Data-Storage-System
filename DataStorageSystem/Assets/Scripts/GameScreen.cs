@@ -4,7 +4,6 @@
 #endregion
 using Assets.Scripts.Infastructure;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace VectorSchool
 {
@@ -46,6 +45,11 @@ namespace VectorSchool
         public void OnTakeGemsButtonClick()
         {
             PlayerModelProvider.Instance.Get.WithdrawGems(_gemsToTake);
+        }
+
+        public void OnLoadDataButtonClick()
+        {
+            PlayerDataManager.Instance.LoadPlayerPrefsData();
         }
 
         #endregion
